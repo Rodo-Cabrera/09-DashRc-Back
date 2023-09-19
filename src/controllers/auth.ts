@@ -21,8 +21,7 @@ export const login = async(req:any, res = response) => {
         if(!errorsValidate.isEmpty()){
             return res.status(400).json({
                 status: 'error',
-                msg: 'Error de datos de acceso al sistema!',
-                res: errorsValidate.mapped(),
+                msg: errorsValidate.array()[0].msg,
             });
         }
 
