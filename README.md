@@ -18,7 +18,7 @@ Node.js · Express · TypeScript · TypeORM · MySQL · JWT · bcryptjs · expre
 
 ```bash
 npm install
-# create a .env with the DB connection settings, JWT secret and port used in src/dbConfig.ts and src/hepers/jwt.ts
+cp .env.example .env   # DB connection, JWT_SECRET and PORT
 npm run dev        # nodemon + ts-node
 npm run build && npm start
 ```
