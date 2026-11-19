@@ -5,7 +5,7 @@ import { User } from '../entities/user.entity';
 export const revalidateJWT = (req=request, res=response, next: () => void) => {
 
     const token = req.header("x-token-data");
-    const secretKey = '0410762720612lubengui';
+    const secretKey = process.env.JWT_SECRET as string;
     
     if(!token){
         return res.status(401).json({

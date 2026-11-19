@@ -5,7 +5,7 @@ export const generateJWT = (id: number, name:string, lastname:string):Promise< s
 
     return new Promise( (resolve, reject ) => {
         const payload = {  id, name, lastname };
-        const secretKey = '0410762720612lubengui';
+        const secretKey = process.env.JWT_SECRET as string;
         jwt.sign(payload, secretKey, { 
             expiresIn: '2h'
         }, (err, token) => {
